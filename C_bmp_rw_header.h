@@ -128,7 +128,7 @@ bool read_bmp(const char *filename, int *wo, int *ho, uint8_t **rgba) {
           }
         }
 
-        padding = ((4 - (width * 3) % 4) % 4);
+        padding = ((4 - (width * 4) % 4) % 4);
         if (fread(bmp_pad, 1, padding, f) != padding){
           free(data);
           fclose(f);
