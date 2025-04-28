@@ -87,16 +87,17 @@ bool read_bmp(const char *filename, int *wo, int *ho, uint8_t **rgba) {
     
     width = (bmp_info_header[4] + (bmp_info_header[5] << 8) + (bmp_info_header[6] << 16) + (bmp_info_header[7] << 24));
     height = (bmp_info_header[8] + (bmp_info_header[9] << 8) + (bmp_info_header[10] << 16) + (bmp_info_header[11] << 24));
-    if ((width>4096) || (height>4096)) {
-      fclose(f);
-      printf("ERROR height or weight >4096 width %d height %d\n", width, height);
-      return false;
-    }
   
     bool flip = height<0;
     if(flip){
       height = -height;
       printf("Warning img height is negative, flip %s\n", filename);
+    }
+
+    if ((width>4096) || (height>4096)) {
+      fclose(f);
+      printf("ERROR height or weight >4096 width %d height %d\n", width, height);
+      return false;
     }
     
     if ((width > 0) && (height > 0) && (width<=4096) && (height<=4096))
