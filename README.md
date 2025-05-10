@@ -6,7 +6,7 @@ Parts of this code based on https://github.com/vallentin/LoadBMP
 
 BPM rgba image read write in C minimal single header.
 
-# Only RGBA bpm format supported - tested with GIMP 2.10.38
+# Only RGBA bpm format supported - tested with GIMP 2.10.38 and GIMP 3
 
 ### Example usage:
 
