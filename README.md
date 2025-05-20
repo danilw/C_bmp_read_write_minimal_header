@@ -8,6 +8,8 @@ BPM rgba image read write in C minimal single header.
 
 # Only RGBA bpm format supported - tested with GIMP 2.10.38 and GIMP 3
 
+### *(in GIMP3 when saving BMP - select 32 bit color format, not 24 - in save dialog)*
+
 ### Example usage:
 
 ```c
